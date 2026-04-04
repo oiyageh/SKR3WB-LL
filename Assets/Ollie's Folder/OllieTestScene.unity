@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.21442977, g: 0.29258147, b: 0.49056602, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 9c056ca4669868342a704f5ac31f0104, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -505,9 +505,9 @@ MonoBehaviour:
   lightColor:
     serializedVersion: 2
     key0: {r: 0.023238765, g: 0.03020383, b: 0.15723258, a: 1}
-    key1: {r: 0.78616345, g: 0.28723493, b: 0, a: 1}
-    key2: {r: 1, g: 0.8551497, b: 0.35534585, a: 0}
-    key3: {r: 0.64779866, g: 0.16896531, b: 0, a: 0}
+    key1: {r: 1, g: 0.5873575, b: 0.20440245, a: 1}
+    key2: {r: 1, g: 0.93118197, b: 0.6949685, a: 0}
+    key3: {r: 1, g: 0.5882353, b: 0.20784314, a: 0}
     key4: {r: 0.023529412, g: 0.03137255, b: 0.15686275, a: 0}
     key5: {r: 0, g: 0, b: 0, a: 0}
     key6: {r: 0, g: 0, b: 0, a: 0}
@@ -586,10 +586,11 @@ MonoBehaviour:
     m_ColorSpace: -1
     m_NumColorKeys: 3
     m_NumAlphaKeys: 2
-  nightSky: {fileID: 2100000, guid: c494c335823f54b52b2e87e1b7a63a23, type: 2}
-  sunriseSky: {fileID: 2100000, guid: c82a334cf5a5e47978749c210cee72a7, type: 2}
-  daySky: {fileID: 2100000, guid: 73324b55f67f54c7bbf43204788b8bbe, type: 2}
-  sunsetSky: {fileID: 2100000, guid: 01f4eb1c73693428d923f1520032e7f9, type: 2}
+  skyboxBlendMat: {fileID: 2100000, guid: 9c056ca4669868342a704f5ac31f0104, type: 2}
+  nightHDRI: {fileID: 8900000, guid: 97259d0c0ea9f491692be825da27978a, type: 3}
+  sunriseHDRI: {fileID: 8900000, guid: 66e51860485ae4048a30f7e029e65af7, type: 3}
+  dayHDRI: {fileID: 8900000, guid: d4c8dc343ae5d4673b7720ffdb1ddf00, type: 3}
+  sunsetHDRI: {fileID: 8900000, guid: 8a293ce833d584fc98516e0e74f495a4, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
