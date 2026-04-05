@@ -45,7 +45,7 @@ public class TimeDebugUI : MonoBehaviour
 
         GUILayout.Space(10);
 
-        // Quick presets
+        // Quick presets to switch between the times
         GUILayout.Label("Quick Set:");
 
         if (GUILayout.Button("🌅 Sunrise")) timeSystem.debugTime = 6f;
