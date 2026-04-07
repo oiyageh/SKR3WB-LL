@@ -5,83 +5,95 @@ using TMPro;
 
 public class DrinkOrderSystem : MonoBehaviour
 {
-    [Header("NPC")]
-    public GameObject npcPrefab;
+    [Header("NPC Variants")]
+    public List<GameObject> npcPrefabs;
     public Transform spawnPoint;
-    public float spawnInterval = 120f; // every 2 minutes
+    public float spawnInterval = 10f;
 
-    [Header("UI")]
-    public TextMeshProUGUI orderText;
+    private GameObject currentNPC;
+    private NPCExpression npcExpression;
+    private bool npcActive = false;
 
     [Header("Drinks")]
     public List<string> drinks = new List<string> { "Coffee", "Tea", "Juice" };
-
     private string currentOrder;
-    private GameObject currentNPC;
+
+    [Header("UI")]
+    public TextMeshProUGUI orderText;
+    public TextMeshProUGUI reputationText;
 
     [Header("Reputation")]
     public int reputation = 0;
 
-    private bool npcActive = false;
-
     void Start()
     {
-        StartCoroutine(SpawnNPCLoop());
+        orderText.text = "Waiting for customer...";
+        UpdateReputationUI();
+        StartCoroutine(SpawnLoop());
     }
 
-    IEnumerator SpawnNPCLoop()
+    IEnumerator SpawnLoop()
     {
         while (true)
         {
             yield return new WaitForSeconds(spawnInterval);
 
             if (!npcActive)
-            {
                 SpawnNPC();
-            }
         }
     }
 
     void SpawnNPC()
     {
-        currentNPC = Instantiate(npcPrefab, spawnPoint.position, Quaternion.identity);
+        GameObject randomNPC = npcPrefabs[Random.Range(0, npcPrefabs.Count)];
+        currentNPC = Instantiate(randomNPC, spawnPoint.position, Quaternion.identity);
+
+        npcExpression = currentNPC.GetComponent<NPCExpression>();
 
         currentOrder = drinks[Random.Range(0, drinks.Count)];
-        npcActive = true;
-
         orderText.text = "Order: " + currentOrder;
+
+        npcActive = true;
     }
 
-    // Call this from UI buttons
-    public void PlayerSelectDrink(string selectedDrink)
+    public void SelectDrink(string selectedDrink)
     {
         if (!npcActive) return;
 
         if (selectedDrink == currentOrder)
         {
-            Debug.Log("Correct drink!");
-            reputation += 1;
-            StartCoroutine(NPCLeave("happy"));
+            reputation++;
+            orderText.text = "Correct! ";
+
+            if (npcExpression != null)
+                npcExpression.SetHappy();
         }
         else
         {
-            Debug.Log("Wrong drink!");
-            reputation -= 1;
-            StartCoroutine(NPCLeave("angry"));
+            reputation--;
+            orderText.text = "Wrong! ";
+
+            if (npcExpression != null)
+                npcExpression.SetAngry();
         }
+
+        UpdateReputationUI();
+        StartCoroutine(NPCLeave());
     }
 
-    IEnumerator NPCLeave(string mood)
+    IEnumerator NPCLeave()
     {
-        orderText.text = "Customer leaving...";
-        orderText.text = "Waiting for customer...";
-
-        // You can replace this with animations later
-        Debug.Log("NPC is " + mood);
-
         yield return new WaitForSeconds(2f);
 
         Destroy(currentNPC);
         npcActive = false;
+
+        orderText.text = "Waiting for customer...";
+    }
+
+    void UpdateReputationUI()
+    {
+        if (reputationText != null)
+            reputationText.text = "Reputation: " + reputation;
     }
 }
