@@ -3762,6 +3762,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TimeDebugUI
   timeSystem: {fileID: 2115780915}
   statsSystem: {fileID: 2115780918}
+  npcSpawner: {fileID: 2115780917}
+  drinkSystem: {fileID: 2115780917}
 --- !u!114 &2115780915
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3904,6 +3906,8 @@ MonoBehaviour:
   - {fileID: 232829807541433336, guid: fc5685b5ad2fbaf4b86fc572ae00afd2, type: 3}
   spawnPoint: {fileID: 1447031058}
   spawnInterval: 10
+  useDebugSpawnSpeed: 0
+  debugSpawnMultiplier: 5
   drinks:
   - Drink1
   - Drink2
