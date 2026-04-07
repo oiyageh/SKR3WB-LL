@@ -8,7 +8,16 @@ public class DrinkOrderSystem : MonoBehaviour
     [Header("NPC Variants")]
     public List<GameObject> npcPrefabs;
     public Transform spawnPoint;
+
+    [Header("Spawn Settings")]
     public float spawnInterval = 10f;
+    public bool useDebugSpawnSpeed = false;
+    public float debugSpawnMultiplier = 5f;
+
+    private float spawnTimer;
+
+    [Header("Systems")]
+    private AutoSaveSystem statsSystem;
 
     private GameObject currentNPC;
     private NPCExpression npcExpression;
@@ -25,30 +34,74 @@ public class DrinkOrderSystem : MonoBehaviour
     [Header("Reputation")]
     public int reputation = 0;
 
+    //npc list for debug
+    private List<GameObject> activeNPCs = new List<GameObject>();
+
+    void Awake()
+    {
+        statsSystem = GetComponent<AutoSaveSystem>();
+    }
+
     void Start()
     {
         orderText.text = "Waiting for customer...";
         UpdateReputationUI();
-        StartCoroutine(SpawnLoop());
     }
 
-    IEnumerator SpawnLoop()
+    void Update()
     {
-        while (true)
-        {
-            yield return new WaitForSeconds(spawnInterval);
+        HandleNPCSpawning();
+    }
 
-            if (!npcActive)
-                SpawnNPC();
+    // =========================
+    // NEW TIMER SYSTEM (DEBUG SAFE) HOPEFULLLLYYY
+    // =========================
+
+    void HandleNPCSpawning()
+    {
+        if (npcActive) return;
+
+        float interval = spawnInterval;
+
+        if (useDebugSpawnSpeed)
+            interval = spawnInterval / debugSpawnMultiplier;
+
+        spawnTimer += Time.deltaTime;
+
+        if (spawnTimer >= interval)
+        {
+            SpawnNPC();
+            spawnTimer = 0f;
         }
     }
 
-    void SpawnNPC()
+    public void ClearAllNPCs()
     {
-        GameObject randomNPC = npcPrefabs[Random.Range(0, npcPrefabs.Count)];
-        currentNPC = Instantiate(randomNPC, spawnPoint.position, Quaternion.identity);
+        foreach (GameObject npc in activeNPCs)
+        {
+            if (npc != null)
+                Destroy(npc);
+        }
 
-        npcExpression = currentNPC.GetComponent<NPCExpression>();
+        activeNPCs.Clear(); // important
+
+        currentNPC = null;
+        npcActive = false;
+
+        Debug.Log("All NPCs cleared!");
+    }
+
+    public void SpawnNPC()
+    {
+        if (npcPrefabs.Count == 0) return;
+
+        GameObject randomNPC = npcPrefabs[Random.Range(0, npcPrefabs.Count)];
+        GameObject npc = Instantiate(randomNPC, spawnPoint.position, Quaternion.identity);
+
+        activeNPCs.Add(npc); // 🔥 TRACK IT
+
+        currentNPC = npc;
+        npcExpression = npc.GetComponent<NPCExpression>();
 
         currentOrder = drinks[Random.Range(0, drinks.Count)];
         orderText.text = "Order: " + currentOrder;
@@ -63,7 +116,11 @@ public class DrinkOrderSystem : MonoBehaviour
         if (selectedDrink == currentOrder)
         {
             reputation++;
-            orderText.text = "Correct! ";
+
+            if (statsSystem != null)
+                statsSystem.AddCorrectDrink();
+
+            orderText.text = "Correct!";
 
             if (npcExpression != null)
                 npcExpression.SetHappy();
@@ -71,7 +128,11 @@ public class DrinkOrderSystem : MonoBehaviour
         else
         {
             reputation--;
-            orderText.text = "Wrong! ";
+
+            if (statsSystem != null)
+                statsSystem.AddWrongDrink();
+
+            orderText.text = "Wrong!";
 
             if (npcExpression != null)
                 npcExpression.SetAngry();
