@@ -3,11 +3,13 @@ using System.Collections.Generic;
 
 public class DrinkCup : MonoBehaviour
 {
+    //stores what ingridents were put in your current drink
     public List<IngredientData> currentIngredients = new List<IngredientData>();
     public List<DrinkRecipe> recipes;
 
     public DrinkOrderSystem orderSystem;
 
+    //when drinks touch the cup it gets added and the object is destroyed
     void OnTriggerEnter(Collider other)
     {
         DraggableIngredient ingredient = other.GetComponent<DraggableIngredient>();
@@ -25,6 +27,7 @@ public class DrinkCup : MonoBehaviour
         Debug.Log("Added: " + data.ingredientName);
     }
 
+    //called when player presses the button
     public void SubmitDrink()
     {
         string result = CheckRecipe();
@@ -33,12 +36,13 @@ public class DrinkCup : MonoBehaviour
 
         if (orderSystem != null)
         {
+            //This connects back to the drink order system and sends thre results to the NPCs
             orderSystem.SelectDrink(result);
         }
 
         currentIngredients.Clear();
     }
-
+    //checks recipe
     string CheckRecipe()
     {
         foreach (var recipe in recipes)
@@ -52,6 +56,7 @@ public class DrinkCup : MonoBehaviour
 
     bool MatchesRecipe(DrinkRecipe recipe)
     {
+        //checks to see if all the ingridents match and its the same amount
         if (recipe.ingredients.Count != currentIngredients.Count)
             return false;
 

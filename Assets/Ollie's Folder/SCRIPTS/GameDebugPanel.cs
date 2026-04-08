@@ -1,35 +1,38 @@
 using UnityEngine;
 using TMPro;
-using System;
+using System.Collections.Generic;
 
 public class GameDebugPanel : MonoBehaviour
 {
     [Header("References")]
     public RealWorldTimeSystem timeSystem;
     public AutoSaveSystem statsSystem;
-    public DrinkOrderSystem npcSpawner;
     public DrinkOrderSystem drinkSystem;
+
+    [Header("Drink System Debug")]
+    public DrinkCup cup;
+    public List<GameObject> ingredientPrefabs;
+    public Transform spawnPoint;
+    public List<DrinkRecipe> recipes;
 
     [Header("UI State")]
     bool showUI = false;
     float timeSpeed = 1f;
 
+    private Vector2 scrollPosition = Vector2.zero;
+
     void Update()
     {
-        // Toggle debug panel
         if (Input.GetKeyDown(KeyCode.F1))
             showUI = !showUI;
 
-        if (timeSystem != null)
+        // Debug time progression
+        if (timeSystem != null && timeSystem.useDebugTime)
         {
-            // Manual debug time progression
-            if (timeSystem.useDebugTime)
-            {
-                timeSystem.debugTime += Time.deltaTime * timeSpeed;
+            timeSystem.debugTime += Time.deltaTime * timeSpeed;
 
-                if (timeSystem.debugTime >= 24f)
-                    timeSystem.debugTime = 0f;
-            }
+            if (timeSystem.debugTime >= 24f)
+                timeSystem.debugTime = 0f;
         }
     }
 
@@ -37,14 +40,12 @@ public class GameDebugPanel : MonoBehaviour
     {
         if (!showUI) return;
 
-        // Start outer area
-        GUILayout.BeginArea(new Rect(20, 20, 350, 500), GUI.skin.box);
+        GUILayout.BeginArea(new Rect(20, 20, 350, 550), GUI.skin.box);
         GUILayout.Label("🛠 GAME DEBUG PANEL");
 
-        // Start scroll view
-        scrollPosition = GUILayout.BeginScrollView(scrollPosition, GUILayout.Width(330), GUILayout.Height(470));
+        scrollPosition = GUILayout.BeginScrollView(scrollPosition, GUILayout.Width(330), GUILayout.Height(520));
 
-        // ================= TIME SYSTEM =================
+        // ================= TIME =================
         if (timeSystem != null)
         {
             GUILayout.Label("⏱ TIME SYSTEM");
@@ -57,9 +58,6 @@ public class GameDebugPanel : MonoBehaviour
             GUILayout.Label("Speed: " + timeSpeed.ToString("F1"));
             timeSpeed = GUILayout.HorizontalSlider(timeSpeed, 0f, 10f);
 
-            GUILayout.Space(5);
-
-            GUILayout.Label("Quick Time Presets:");
             if (GUILayout.Button("🌅 Sunrise")) timeSystem.debugTime = 6f;
             if (GUILayout.Button("☀️ Noon")) timeSystem.debugTime = 12f;
             if (GUILayout.Button("🌇 Sunset")) timeSystem.debugTime = 18f;
@@ -68,7 +66,7 @@ public class GameDebugPanel : MonoBehaviour
 
         GUILayout.Space(10);
 
-        // ================= STATS SYSTEM =================
+        // ================= STATS =================
         if (statsSystem != null)
         {
             GUILayout.Label("📊 STATS SYSTEM");
@@ -84,13 +82,13 @@ public class GameDebugPanel : MonoBehaviour
 
         GUILayout.Space(10);
 
-        // ================= NPC SPAWNER =================
+        // ================= NPC =================
         if (drinkSystem != null)
         {
-            GUILayout.Label("👥 NPC SPAWNER");
+            GUILayout.Label("👥 NPC SYSTEM");
 
             drinkSystem.useDebugSpawnSpeed =
-                GUILayout.Toggle(drinkSystem.useDebugSpawnSpeed, "Use Fast NPC Spawns");
+                GUILayout.Toggle(drinkSystem.useDebugSpawnSpeed, "Fast NPC Spawns");
 
             GUILayout.Label("Spawn Interval: " + drinkSystem.spawnInterval.ToString("F1"));
             drinkSystem.spawnInterval =
@@ -105,17 +103,97 @@ public class GameDebugPanel : MonoBehaviour
 
             if (GUILayout.Button("🧹 Clear NPCs"))
                 drinkSystem.ClearAllNPCs();
-
-
         }
 
-        // End scroll view
-        GUILayout.EndScrollView();
+        GUILayout.Space(10);
 
-        // End outer area
+        // ================= DRINK DEBUG =================
+        if (cup != null && drinkSystem != null)
+        {
+            GUILayout.Label("🍹 DRINK DEBUG");
+
+            // --- Spawn Ingredients ---
+            GUILayout.Label("Spawn Ingredients:");
+            for (int i = 0; i < ingredientPrefabs.Count; i++)
+            {
+                if (GUILayout.Button("🧪 " + ingredientPrefabs[i].name))
+                {
+                    SpawnIngredient(i);
+                }
+            }
+
+            GUILayout.Space(5);
+
+            // --- Force Orders ---
+            GUILayout.Label("Force Orders:");
+            for (int i = 0; i < recipes.Count; i++)
+            {
+                if (GUILayout.Button("🎯 " + recipes[i].drinkName))
+                {
+                    ForceOrder(i);
+                }
+            }
+
+            GUILayout.Space(5);
+
+            if (GUILayout.Button("🧹 Clear Cup"))
+                ClearCup();
+
+            if (GUILayout.Button("⚡ Auto Complete Order"))
+                AutoComplete();
+        }
+
+        GUILayout.EndScrollView();
         GUILayout.EndArea();
     }
 
-    // Add this at the top of your class
-    private Vector2 scrollPosition = Vector2.zero;
+    // ================= FUNCTIONS =================
+
+    void SpawnIngredient(int index)
+    {
+        if (index < 0 || index >= ingredientPrefabs.Count) return;
+
+        Vector3 pos = spawnPoint != null
+            ? spawnPoint.position
+            : Camera.main.transform.position + Camera.main.transform.forward * 3f;
+
+        Instantiate(ingredientPrefabs[index], pos, Quaternion.identity);
+    }
+
+    void ForceOrder(int index)
+    {
+        if (index < 0 || index >= recipes.Count) return;
+
+        string forcedDrink = recipes[index].drinkName;
+        drinkSystem.ForceOrder(forcedDrink);
+    }
+
+    void ClearCup()
+    {
+        cup.currentIngredients.Clear();
+        Debug.Log("Cup cleared!");
+    }
+
+    void AutoComplete()
+    {
+        string order = drinkSystem.GetCurrentOrder();
+
+        foreach (var recipe in recipes)
+        {
+            if (recipe.drinkName == order)
+            {
+                cup.currentIngredients.Clear();
+
+                foreach (var ing in recipe.ingredients)
+                {
+                    cup.currentIngredients.Add(ing);
+                }
+
+                cup.SubmitDrink();
+                return;
+            }
+        }
+
+        Debug.Log("No matching recipe found!");
+    }
 }

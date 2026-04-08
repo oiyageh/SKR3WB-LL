@@ -157,4 +157,17 @@ public class DrinkOrderSystem : MonoBehaviour
         if (reputationText != null)
             reputationText.text = "Reputation: " + reputation;
     }
+
+    public string GetCurrentOrder()
+    {
+        return currentOrder;
+    }
+
+    public void ForceOrder(string newOrder)
+    {
+        currentOrder = newOrder;
+        orderText.text = "Order: " + currentOrder;
+
+        Debug.Log("Forced Order: " + currentOrder);
+    }
 }
