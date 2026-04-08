@@ -2,34 +2,38 @@ using UnityEngine;
 
 public class CameraToggle : MonoBehaviour
 {
+    [Header("Player")]
+    public Transform player;
+    public float playerTurnSpeed = 10f;
+
     [Header("Camera Positions")]
     public Transform frontView;
     public Transform backView;
 
-    [Header("Movement Settings")]
-    public float moveSpeed = 5f;
-    public float rotateSpeed = 5f;
+    [Header("Camera Movement")]
+    public float camMoveSpeed = 5f;
+    public float camRotateSpeed = 5f;
 
-    [Header("Mouse Follow Settings")]
+    [Header("Mouse Look")]
     public float mouseSensitivity = 2f;
     public float maxOffset = 10f;
 
     private Transform targetView;
+    private Quaternion targetPlayerRotation;
 
     float mouseX;
     float mouseY;
 
     void Start()
     {
-        targetView = backView;
+        // Start facing forward
+        targetView = frontView;
+        targetPlayerRotation = Quaternion.Euler(0f, 0f, 0f);
 
-        if (targetView != null)
-        {
-            transform.position = targetView.position;
-            transform.rotation = targetView.rotation;
-        }
+        // Snap camera to start
+        transform.position = frontView.position;
+        transform.rotation = frontView.rotation;
 
-        // Always visible cursor
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
     }
@@ -38,25 +42,27 @@ public class CameraToggle : MonoBehaviour
     {
         HandleInput();
         HandleMouse();
+        RotatePlayer();
         MoveCamera();
     }
 
     void HandleInput()
     {
-        if (Input.GetKeyDown(KeyCode.RightArrow))
+        // Face backward
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
-            SetBackView();
+            SetBackward();
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        // Face forward
+        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
-            SetFrontView();
+            SetForward();
         }
     }
 
     void HandleMouse()
     {
-        // Still reads mouse movement even when visible
         mouseX += Input.GetAxis("Mouse X") * mouseSensitivity;
         mouseY -= Input.GetAxis("Mouse Y") * mouseSensitivity;
 
@@ -64,36 +70,55 @@ public class CameraToggle : MonoBehaviour
         mouseY = Mathf.Clamp(mouseY, -maxOffset, maxOffset);
     }
 
+    void RotatePlayer()
+    {
+        if (player == null) return;
+
+        player.rotation = Quaternion.Lerp(
+            player.rotation,
+            targetPlayerRotation,
+            Time.deltaTime * playerTurnSpeed
+        );
+    }
+
     void MoveCamera()
     {
         if (targetView == null) return;
 
+        // Position
         transform.position = Vector3.Lerp(
             transform.position,
             targetView.position,
-            Time.deltaTime * moveSpeed
+            Time.deltaTime * camMoveSpeed
         );
 
-        Quaternion baseRotation = targetView.rotation;
+        // Rotation + mouse offset
+        Quaternion baseRot = targetView.rotation;
         Quaternion mouseOffset = Quaternion.Euler(mouseY, mouseX, 0);
-        Quaternion finalRotation = baseRotation * mouseOffset;
+        Quaternion finalRot = baseRot * mouseOffset;
 
         transform.rotation = Quaternion.Lerp(
             transform.rotation,
-            finalRotation,
-            Time.deltaTime * rotateSpeed
+            finalRot,
+            Time.deltaTime * camRotateSpeed
         );
     }
 
-    public void SetFrontView()
+    void SetForward()
     {
+        if (targetView == frontView) return;
+
         targetView = frontView;
+        targetPlayerRotation = Quaternion.Euler(0f, 0f, 0f);
         ResetMouse();
     }
 
-    public void SetBackView()
+    void SetBackward()
     {
+        if (targetView == backView) return;
+
         targetView = backView;
+        targetPlayerRotation = Quaternion.Euler(0f, 180f, 0f);
         ResetMouse();
     }
 

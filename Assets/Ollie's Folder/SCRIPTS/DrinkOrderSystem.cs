@@ -24,7 +24,7 @@ public class DrinkOrderSystem : MonoBehaviour
     private bool npcActive = false;
 
     [Header("Drinks")]
-    public List<string> drinks = new List<string> { "Coffee", "Tea", "Juice" };
+    public List<string> drinks = new List<string> { "Coffee", "Latte", "Tea" };
     private string currentOrder;
 
     [Header("UI")]
@@ -98,7 +98,7 @@ public class DrinkOrderSystem : MonoBehaviour
         GameObject randomNPC = npcPrefabs[Random.Range(0, npcPrefabs.Count)];
         GameObject npc = Instantiate(randomNPC, spawnPoint.position, Quaternion.identity);
 
-        activeNPCs.Add(npc); // 🔥 TRACK IT
+        activeNPCs.Add(npc); // TRACK IT
 
         currentNPC = npc;
         npcExpression = npc.GetComponent<NPCExpression>();
