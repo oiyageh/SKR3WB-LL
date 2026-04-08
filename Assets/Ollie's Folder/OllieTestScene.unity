@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.21442977, g: 0.29258147, b: 0.49056602, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 9c056ca4669868342a704f5ac31f0104, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 83f19fe838f30224382a8153fd1f3028, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -6029,7 +6029,7 @@ MonoBehaviour:
     m_ColorSpace: -1
     m_NumColorKeys: 3
     m_NumAlphaKeys: 2
-  skyboxBlendMat: {fileID: 2100000, guid: 9c056ca4669868342a704f5ac31f0104, type: 2}
+  skyboxBlendMat: {fileID: 2100000, guid: 83f19fe838f30224382a8153fd1f3028, type: 2}
   nightHDRI: {fileID: 8900000, guid: 97259d0c0ea9f491692be825da27978a, type: 3}
   sunriseHDRI: {fileID: 8900000, guid: 66e51860485ae4048a30f7e029e65af7, type: 3}
   dayHDRI: {fileID: 8900000, guid: d4c8dc343ae5d4673b7720ffdb1ddf00, type: 3}
