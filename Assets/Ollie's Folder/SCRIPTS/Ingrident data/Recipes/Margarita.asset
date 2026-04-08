@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88375ac9edc516245b21ce4a8b14c519, type: 3}
   m_Name: Margarita
   m_EditorClassIdentifier: Assembly-CSharp::DrinkRecipe
-  drinkName: 
-  ingredients: []
+  drinkName: Margarita
+  ingredients:
+  - {fileID: 11400000, guid: 186d19d7c6ec8424bbde0589d8e0f38d, type: 2}
+  - {fileID: 11400000, guid: 85310ccf6f2a24a44aaacb94f96ac69c, type: 2}

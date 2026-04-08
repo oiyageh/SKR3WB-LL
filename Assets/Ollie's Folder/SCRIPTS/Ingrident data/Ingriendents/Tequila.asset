@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27f70a9bdf49057498d3941bb9f85bab, type: 3}
   m_Name: Tequila
   m_EditorClassIdentifier: Assembly-CSharp::IngredientData
-  ingredientName: 
+  ingredientName: Tequila
