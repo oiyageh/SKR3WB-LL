@@ -11892,8 +11892,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CameraToggle
   player: {fileID: 0}
   playerTurnSpeed: 10
-  frontView: {fileID: 544566224}
-  backView: {fileID: 213833695}
+  frontView: {fileID: 213833695}
+  backView: {fileID: 544566224}
   camMoveSpeed: 5
   camRotateSpeed: 5
   mouseSensitivity: 0.73
