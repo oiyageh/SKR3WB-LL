@@ -34,7 +34,6 @@ public class DrinkOrderSystem : MonoBehaviour
     [Header("Reputation")]
     public int reputation = 0;
 
-    //npc list for debug
     private List<GameObject> activeNPCs = new List<GameObject>();
 
     void Awake()
@@ -53,18 +52,13 @@ public class DrinkOrderSystem : MonoBehaviour
         HandleNPCSpawning();
     }
 
-    // =========================
-    // NEW TIMER SYSTEM (DEBUG SAFE) HOPEFULLLLYYY
-    // =========================
-
     void HandleNPCSpawning()
     {
         if (npcActive) return;
 
-        float interval = spawnInterval;
-
-        if (useDebugSpawnSpeed)
-            interval = spawnInterval / debugSpawnMultiplier;
+        float interval = useDebugSpawnSpeed
+            ? spawnInterval / debugSpawnMultiplier
+            : spawnInterval;
 
         spawnTimer += Time.deltaTime;
 
@@ -75,30 +69,17 @@ public class DrinkOrderSystem : MonoBehaviour
         }
     }
 
-    public void ClearAllNPCs()
-    {
-        foreach (GameObject npc in activeNPCs)
-        {
-            if (npc != null)
-                Destroy(npc);
-        }
-
-        activeNPCs.Clear(); // important
-
-        currentNPC = null;
-        npcActive = false;
-
-        Debug.Log("All NPCs cleared!");
-    }
-
     public void SpawnNPC()
     {
         if (npcPrefabs.Count == 0) return;
 
-        GameObject randomNPC = npcPrefabs[Random.Range(0, npcPrefabs.Count)];
-        GameObject npc = Instantiate(randomNPC, spawnPoint.position, Quaternion.identity);
+        GameObject npc = Instantiate(
+            npcPrefabs[Random.Range(0, npcPrefabs.Count)],
+            spawnPoint.position,
+            Quaternion.identity
+        );
 
-        activeNPCs.Add(npc); // TRACK IT
+        activeNPCs.Add(npc);
 
         currentNPC = npc;
         npcExpression = npc.GetComponent<NPCExpression>();
@@ -113,7 +94,13 @@ public class DrinkOrderSystem : MonoBehaviour
     {
         if (!npcActive) return;
 
-        if (selectedDrink == currentOrder)
+        bool correct = selectedDrink == currentOrder;
+
+        // Handle trash or wrong drinks
+        if (selectedDrink == "Trash")
+            correct = false;
+
+        if (correct)
         {
             reputation++;
 
@@ -121,9 +108,7 @@ public class DrinkOrderSystem : MonoBehaviour
                 statsSystem.AddCorrectDrink();
 
             orderText.text = "Correct!";
-
-            if (npcExpression != null)
-                npcExpression.SetHappy();
+            npcExpression?.SetHappy();
         }
         else
         {
@@ -133,9 +118,7 @@ public class DrinkOrderSystem : MonoBehaviour
                 statsSystem.AddWrongDrink();
 
             orderText.text = "Wrong!";
-
-            if (npcExpression != null)
-                npcExpression.SetAngry();
+            npcExpression?.SetAngry();
         }
 
         UpdateReputationUI();
@@ -146,8 +129,11 @@ public class DrinkOrderSystem : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
 
-        Destroy(currentNPC);
+        if (currentNPC != null)
+            Destroy(currentNPC);
+
         npcActive = false;
+        currentNPC = null;
 
         orderText.text = "Waiting for customer...";
     }
@@ -158,16 +144,57 @@ public class DrinkOrderSystem : MonoBehaviour
             reputationText.text = "Reputation: " + reputation;
     }
 
+    public bool HasActiveNPC()
+    {
+        return npcActive && currentNPC != null;
+    }
+
     public string GetCurrentOrder()
     {
+        if (!npcActive)
+            return "";
+
         return currentOrder;
     }
 
+    public void ClearAllNPCs()
+    {
+        foreach (GameObject npc in activeNPCs)
+        {
+            if (npc != null)
+                Destroy(npc);
+        }
+
+        activeNPCs.Clear();
+
+        currentNPC = null;
+        npcActive = false;
+
+        currentOrder = "";
+
+        if (orderText != null)
+            orderText.text = "Waiting for customer...";
+
+        Debug.Log("All NPCs cleared!");
+    }
+
+
+
     public void ForceOrder(string newOrder)
     {
+        // Ensure NPC exists
+        if (!npcActive)
+        {
+            SpawnNPC();
+        }
+
         currentOrder = newOrder;
-        orderText.text = "Order: " + currentOrder;
+
+        if (orderText != null)
+            orderText.text = "Order: " + currentOrder;
 
         Debug.Log("Forced Order: " + currentOrder);
     }
+
+
 }

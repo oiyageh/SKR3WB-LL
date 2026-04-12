@@ -164,7 +164,14 @@ public class GameDebugPanel : MonoBehaviour
     {
         if (index < 0 || index >= recipes.Count) return;
 
+        if (drinkSystem == null) return;
+
         string forcedDrink = recipes[index].drinkName;
+
+        // Ensure NPC exists before forcing
+        if (!drinkSystem.HasActiveNPC())
+            drinkSystem.SpawnNPC();
+
         drinkSystem.ForceOrder(forcedDrink);
     }
 
@@ -176,6 +183,14 @@ public class GameDebugPanel : MonoBehaviour
 
     void AutoComplete()
     {
+        if (drinkSystem == null || cup == null) return;
+
+        if (!drinkSystem.HasActiveNPC())
+        {
+            Debug.Log("No NPC to complete order for!");
+            return;
+        }
+
         string order = drinkSystem.GetCurrentOrder();
 
         foreach (var recipe in recipes)
@@ -196,4 +211,5 @@ public class GameDebugPanel : MonoBehaviour
 
         Debug.Log("No matching recipe found!");
     }
+
 }
