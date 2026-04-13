@@ -9202,6 +9202,7 @@ MonoBehaviour:
   - {fileID: 7468392938145151535, guid: c6b6a9b953531f145ab7f6ccf0f16757, type: 3}
   - {fileID: 7354922423774897941, guid: 50a6ec2fdb0a45749bbeb200a497a184, type: 3}
   - {fileID: 232829807541433336, guid: fc5685b5ad2fbaf4b86fc572ae00afd2, type: 3}
+  - {fileID: 232829807541433336, guid: fc5685b5ad2fbaf4b86fc572ae00afd2, type: 3}
   spawnPoint: {fileID: 155924748}
   spawnInterval: 10
   useDebugSpawnSpeed: 0
