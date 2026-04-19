@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 88375ac9edc516245b21ce4a8b14c519, type: 3}
-  m_Name: Old Fashion
+  m_Name: French 75
   m_EditorClassIdentifier: Assembly-CSharp::DrinkRecipe
-  drinkName: Old Fashion
+  drinkName: French 75
   ingredients:
-  - {fileID: 11400000, guid: 5258a32c212e90c4c8eec1074d9ee057, type: 2}
+  - {fileID: 11400000, guid: 361416199f6dce34abad079e6d366e7b, type: 2}
+  - {fileID: 11400000, guid: fc3505e011d6fab40a4582695aa35ac3, type: 2}
   - {fileID: 11400000, guid: 796bae724a7a43f43be8caac0245bcf6, type: 2}
-  - {fileID: 11400000, guid: 7d7e18ef845b308488c2231d1457641a, type: 2}
-  - {fileID: 11400000, guid: 39336b8cc1f78034a93342251c34b157, type: 2}
-  - {fileID: 11400000, guid: 8e2db5f496fd3864d97c9a9e1717db61, type: 2}
+  - {fileID: 11400000, guid: dde95823651a5ed478658c20f1b53658, type: 2}
+  - {fileID: 11400000, guid: fa7af98200659624aa25354ee032aa64, type: 2}

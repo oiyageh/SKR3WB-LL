@@ -10,12 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 88375ac9edc516245b21ce4a8b14c519, type: 3}
-  m_Name: Old Fashion
+  m_Name: Purple Haze
   m_EditorClassIdentifier: Assembly-CSharp::DrinkRecipe
-  drinkName: Old Fashion
+  drinkName: Purple Haze
   ingredients:
-  - {fileID: 11400000, guid: 5258a32c212e90c4c8eec1074d9ee057, type: 2}
-  - {fileID: 11400000, guid: 796bae724a7a43f43be8caac0245bcf6, type: 2}
-  - {fileID: 11400000, guid: 7d7e18ef845b308488c2231d1457641a, type: 2}
-  - {fileID: 11400000, guid: 39336b8cc1f78034a93342251c34b157, type: 2}
+  - {fileID: 11400000, guid: 8fbdab59379c36c43b9549851e38c3d1, type: 2}
+  - {fileID: 11400000, guid: c08f237b500221247b2d4009adb6e55a, type: 2}
+  - {fileID: 11400000, guid: 9e57f1d105985184391604460e05de1a, type: 2}
+  - {fileID: 11400000, guid: ab188f3c877c51246a365511740a5ab9, type: 2}
+  - {fileID: 11400000, guid: 6d6c6e4a9d8044748baa38b6dc4d9644, type: 2}
   - {fileID: 11400000, guid: 8e2db5f496fd3864d97c9a9e1717db61, type: 2}

@@ -10,13 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 88375ac9edc516245b21ce4a8b14c519, type: 3}
-  m_Name: Margarita
+  m_Name: Long Island Ice Tea
   m_EditorClassIdentifier: Assembly-CSharp::DrinkRecipe
-  drinkName: Margarita
+  drinkName: Long Island Ice Tea
   ingredients:
+  - {fileID: 11400000, guid: 8fbdab59379c36c43b9549851e38c3d1, type: 2}
+  - {fileID: 11400000, guid: 361416199f6dce34abad079e6d366e7b, type: 2}
+  - {fileID: 11400000, guid: 58033c90418d48c4b8aa3650f8d9ee73, type: 2}
   - {fileID: 11400000, guid: c72704d7f2d70754ea24b7d6cc460490, type: 2}
   - {fileID: 11400000, guid: a28b9f71a1bbfe042ac7d384328415f6, type: 2}
-  - {fileID: 11400000, guid: 6bec197756504ff47bd49a58ca621b5b, type: 2}
+  - {fileID: 11400000, guid: fc3505e011d6fab40a4582695aa35ac3, type: 2}
   - {fileID: 11400000, guid: 796bae724a7a43f43be8caac0245bcf6, type: 2}
-  - {fileID: 11400000, guid: c5b35200a4cd7194eb75cb33ca169162, type: 2}
-  - {fileID: 11400000, guid: 8e2db5f496fd3864d97c9a9e1717db61, type: 2}
+  - {fileID: 11400000, guid: 983e009564b320d4c8a00813575adbc3, type: 2}
+  - {fileID: 11400000, guid: dde95823651a5ed478658c20f1b53658, type: 2}
