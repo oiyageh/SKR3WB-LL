@@ -7622,63 +7622,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1068649972}
   m_Mesh: {fileID: -147582095948579066, guid: 542febb9ff7852a43ac4bb8b52879cbc, type: 3}
---- !u!1001 &1072346622
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: 75edf7e9cd1588a4fa8bdc8e7c2b40e6, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -14.978428
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 75edf7e9cd1588a4fa8bdc8e7c2b40e6, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -2.540818
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 75edf7e9cd1588a4fa8bdc8e7c2b40e6, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -14.693
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 75edf7e9cd1588a4fa8bdc8e7c2b40e6, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071067
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 75edf7e9cd1588a4fa8bdc8e7c2b40e6, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 75edf7e9cd1588a4fa8bdc8e7c2b40e6, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 75edf7e9cd1588a4fa8bdc8e7c2b40e6, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 75edf7e9cd1588a4fa8bdc8e7c2b40e6, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 75edf7e9cd1588a4fa8bdc8e7c2b40e6, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 75edf7e9cd1588a4fa8bdc8e7c2b40e6, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 75edf7e9cd1588a4fa8bdc8e7c2b40e6, type: 3}
-      propertyPath: m_Name
-      value: AsahiBeerCan
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 75edf7e9cd1588a4fa8bdc8e7c2b40e6, type: 3}
 --- !u!1001 &1077470039
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17843,4 +17786,3 @@ SceneRoots:
   - {fileID: 1302581290}
   - {fileID: 845742913}
   - {fileID: 1916950974}
-  - {fileID: 1072346622}
