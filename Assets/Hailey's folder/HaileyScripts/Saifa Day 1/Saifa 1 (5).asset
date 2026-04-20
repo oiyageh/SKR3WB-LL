@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f35bef4643c49dc4ea6d6828aac4e8d4, type: 3}
+  m_Name: Saifa 1 (5)
+  m_EditorClassIdentifier: Assembly-CSharp::NPCData
+  displayName: Saifa
+  lines:
+  - That... sounds pretty nice...
+  - (She shows her ID.)
+  - Hm...I think...uhm...
+  - I'll do a Death in the Afternoon...?
+  allChoices:
+  - choiceText: 'Interesting choice! I''ll get started on that for ya. '
+    nextNode: {fileID: 11400000, guid: 950aeb80ef5b76742a5c5cdce2ef4b51, type: 2}
+  - choiceText: Yeah, sure... I'll get that for you.
+    nextNode: {fileID: 11400000, guid: 950aeb80ef5b76742a5c5cdce2ef4b51, type: 2}
+  nextNode: {fileID: 0}
