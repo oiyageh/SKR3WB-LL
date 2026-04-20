@@ -18,8 +18,8 @@ MonoBehaviour:
   allChoices:
   - choiceText: Didn't you read the sign? Look around you. We sell alcohol. If you're
       not ordering, then get out.
-    nextNode: {fileID: 0}
+    nextNode: {fileID: 11400000, guid: f1caaececb2e7fd45bdfa1205fbacfe3, type: 2}
   - choiceText: Welcome then! This is the SkrewBall Bar, we usually serve alcohol
       but I can have our kitchen prepare small meals as well.
-    nextNode: {fileID: 0}
+    nextNode: {fileID: 11400000, guid: bfa45f5bdeef2e940aeba3262cb923e9, type: 2}
   nextNode: {fileID: 0}
