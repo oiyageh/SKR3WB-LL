@@ -4245,6 +4245,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -2652791812144921745, guid: 0d7a502ba1a02ac4b86a92a02f1e535e, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: f3c7c97aded5e034391cc1421b866b99, type: 2}
     - target: {fileID: 919132149155446097, guid: 0d7a502ba1a02ac4b86a92a02f1e535e, type: 3}
       propertyPath: m_Name
       value: glass 2
@@ -6269,6 +6273,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7770999149557283119, guid: aa96322fcc7862147ba04608099b4f42, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: f3c7c97aded5e034391cc1421b866b99, type: 2}
     - target: {fileID: -217017210004712413, guid: aa96322fcc7862147ba04608099b4f42, type: 3}
       propertyPath: m_Name
       value: cup
@@ -6589,6 +6597,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -4437023288910210098, guid: c413f004395fd0045af0061b3c719a53, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: f3c7c97aded5e034391cc1421b866b99, type: 2}
     - target: {fileID: -4316160776877585114, guid: c413f004395fd0045af0061b3c719a53, type: 3}
       propertyPath: m_Name
       value: cup
@@ -6899,7 +6911,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 610432a709a826f4086935488a4a7ba6, type: 3}
       propertyPath: m_Name
-      value: WineBottle
+      value: Bottle 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7610,6 +7622,63 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1068649972}
   m_Mesh: {fileID: -147582095948579066, guid: 542febb9ff7852a43ac4bb8b52879cbc, type: 3}
+--- !u!1001 &1072346622
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 75edf7e9cd1588a4fa8bdc8e7c2b40e6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -14.978428
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 75edf7e9cd1588a4fa8bdc8e7c2b40e6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.540818
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 75edf7e9cd1588a4fa8bdc8e7c2b40e6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -14.693
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 75edf7e9cd1588a4fa8bdc8e7c2b40e6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071067
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 75edf7e9cd1588a4fa8bdc8e7c2b40e6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 75edf7e9cd1588a4fa8bdc8e7c2b40e6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 75edf7e9cd1588a4fa8bdc8e7c2b40e6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 75edf7e9cd1588a4fa8bdc8e7c2b40e6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 75edf7e9cd1588a4fa8bdc8e7c2b40e6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 75edf7e9cd1588a4fa8bdc8e7c2b40e6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 75edf7e9cd1588a4fa8bdc8e7c2b40e6, type: 3}
+      propertyPath: m_Name
+      value: AsahiBeerCan
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 75edf7e9cd1588a4fa8bdc8e7c2b40e6, type: 3}
 --- !u!1001 &1077470039
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9487,6 +9556,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: glass 4
       objectReference: {fileID: 0}
+    - target: {fileID: 3868608388148061769, guid: aa96322fcc7862147ba04608099b4f42, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: f3c7c97aded5e034391cc1421b866b99, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: -8700617353114198275, guid: aa96322fcc7862147ba04608099b4f42, type: 3}
@@ -13206,7 +13279,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 4154a581391fbe04f94379fdd8df658d, type: 3}
       propertyPath: m_Name
-      value: Bottle
+      value: Bottle 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13722,6 +13795,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: cup
       objectReference: {fileID: 0}
+    - target: {fileID: 8448169730592254290, guid: 504d6a77b65cda140bf2730d76b6cc46, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: f3c7c97aded5e034391cc1421b866b99, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: -8700617353114198275, guid: 504d6a77b65cda140bf2730d76b6cc46, type: 3}
@@ -15157,6 +15234,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: glass 6
       objectReference: {fileID: 0}
+    - target: {fileID: 1348853086083086740, guid: 7d598df93c2852a41999f16f8bbba61b, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: f3c7c97aded5e034391cc1421b866b99, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: -8700617353114198275, guid: 7d598df93c2852a41999f16f8bbba61b, type: 3}
@@ -17752,13 +17833,14 @@ SceneRoots:
   - {fileID: 305855061}
   - {fileID: 1363603625}
   - {fileID: 1413803952}
-  - {fileID: 883674930}
-  - {fileID: 1742365027}
-  - {fileID: 491981443}
-  - {fileID: 1916950974}
-  - {fileID: 1302581290}
-  - {fileID: 845742913}
+  - {fileID: 1697857750}
   - {fileID: 1868567510}
   - {fileID: 1387114110}
-  - {fileID: 1697857750}
   - {fileID: 924666146}
+  - {fileID: 1742365027}
+  - {fileID: 491981443}
+  - {fileID: 883674930}
+  - {fileID: 1302581290}
+  - {fileID: 845742913}
+  - {fileID: 1916950974}
+  - {fileID: 1072346622}
