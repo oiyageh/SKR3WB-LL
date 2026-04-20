@@ -291,7 +291,7 @@ MonoBehaviour:
   choiceButtonPrefab: {fileID: 7892076627761229432, guid: 467f74399946aeb438c278ea5609efb2, type: 3}
   choicesContainer: {fileID: 339009306}
   defaultTalkSpeed: 20
-  fastTalkSpeed: 25
+  fastTalkSpeed: 40
 --- !u!4 &258769224
 Transform:
   m_ObjectHideFlags: 0
