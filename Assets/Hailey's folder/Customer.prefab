@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 8877009110700848508}
   - component: {fileID: 3190194472697732112}
   - component: {fileID: 402963429438392769}
-  - component: {fileID: 372597939600659547}
   - component: {fileID: 2821091225428520941}
   m_Layer: 0
   m_Name: Customer
@@ -92,23 +91,6 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &372597939600659547
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2783144807082571197}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b22aafd6b657bf2468fc6a50ec423a76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CustomerBehavior
-  correctDrink: 0
-  dialogueCanvas: {fileID: 2294658923868591565, guid: 403646cf6902fc844bd8a898960d1aa0, type: 3}
-  dialogueBox: {fileID: 2688769863352279016, guid: d7a326968d07de74b9ec3052bacf7431, type: 3}
-  optionsBox: {fileID: 7857534455820811444, guid: 473a7439f6a2760429bb83a39128a98d, type: 3}
-  playerStats: {fileID: 0}
 --- !u!65 &2821091225428520941
 BoxCollider:
   m_ObjectHideFlags: 0

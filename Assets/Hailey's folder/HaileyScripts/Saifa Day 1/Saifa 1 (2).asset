@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f35bef4643c49dc4ea6d6828aac4e8d4, type: 3}
+  m_Name: Saifa 1 (2)
+  m_EditorClassIdentifier: Assembly-CSharp::NPCData
+  displayName: Saifa
+  lines:
+  - I'm sorry, it's...my first time here...what does this place sell?
+  allChoices:
+  - choiceText: Didn't you read the sign? Look around you. We sell alcohol. If you're
+      not ordering, then get out.
+    nextNode: {fileID: 0}
+  - choiceText: Welcome then! This is the SkrewBall Bar, we usually serve alcohol
+      but I can have our kitchen prepare small meals as well.
+    nextNode: {fileID: 0}
+  nextNode: {fileID: 0}
