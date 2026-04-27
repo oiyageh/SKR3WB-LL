@@ -10,10 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 88375ac9edc516245b21ce4a8b14c519, type: 3}
-  m_Name: Death in the Afternoon
+  m_Name: Mickey's Hard Lemonade
   m_EditorClassIdentifier: Assembly-CSharp::DrinkRecipe
-  drinkName: Death in the Afternoon
+  drinkName: Mickey's Hard Lemonade
   ingredients:
-  - {fileID: 11400000, guid: ffc62f9af6b0aa440806c7164bd11480, type: 2}
-  - {fileID: 11400000, guid: 796bae724a7a43f43be8caac0245bcf6, type: 2}
-  - {fileID: 11400000, guid: 293577e19afc7e04f94954c5ebc9a03e, type: 2}
+  - {fileID: 11400000, guid: a920de396de26cf4f9b767ed20468045, type: 2}

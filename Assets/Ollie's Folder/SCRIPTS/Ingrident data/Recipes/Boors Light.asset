@@ -10,10 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 88375ac9edc516245b21ce4a8b14c519, type: 3}
-  m_Name: Death in the Afternoon
+  m_Name: Boors Light
   m_EditorClassIdentifier: Assembly-CSharp::DrinkRecipe
-  drinkName: Death in the Afternoon
+  drinkName: Boors Light
   ingredients:
-  - {fileID: 11400000, guid: ffc62f9af6b0aa440806c7164bd11480, type: 2}
-  - {fileID: 11400000, guid: 796bae724a7a43f43be8caac0245bcf6, type: 2}
-  - {fileID: 11400000, guid: 293577e19afc7e04f94954c5ebc9a03e, type: 2}
+  - {fileID: 11400000, guid: 1e1ef585cf741b4448700111e2be44c6, type: 2}
