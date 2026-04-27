@@ -22,6 +22,7 @@ public class DrinkOrderSystem : MonoBehaviour
     private GameObject currentNPC;
     private NPCExpression npcExpression;
     private bool npcActive = false;
+    public bool scheduledCustomerHasDrink;
 
     [Header("Drinks")]
     public List<string> drinks = new List<string> { "Coffee", "Latte", "Tea" };
@@ -78,7 +79,7 @@ public class DrinkOrderSystem : MonoBehaviour
             spawnPoint.position,
             Quaternion.identity
         );
-
+        
         activeNPCs.Add(npc);
 
         currentNPC = npc;
@@ -94,6 +95,7 @@ public class DrinkOrderSystem : MonoBehaviour
     {
         if (!npcActive) return;
 
+        scheduledCustomerHasDrink = false;
         bool correct = selectedDrink == currentOrder;
 
         // Handle trash or wrong drinks
@@ -109,6 +111,8 @@ public class DrinkOrderSystem : MonoBehaviour
 
             orderText.text = "Correct!";
             npcExpression?.SetHappy();
+
+            scheduledCustomerHasDrink = true;
         }
         else
         {
@@ -119,10 +123,12 @@ public class DrinkOrderSystem : MonoBehaviour
 
             orderText.text = "Wrong!";
             npcExpression?.SetAngry();
+
+            scheduledCustomerHasDrink = false;
         }
 
         UpdateReputationUI();
-        StartCoroutine(NPCLeave());
+        if (currentNPC.GetComponent<ClickDetector>() == null || !correct) StartCoroutine(NPCLeave());
     }
 
     IEnumerator NPCLeave()

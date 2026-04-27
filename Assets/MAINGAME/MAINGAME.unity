@@ -4142,6 +4142,37 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c413f004395fd0045af0061b3c719a53, type: 3}
+--- !u!1 &279196229
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 279196230}
+  m_Layer: 0
+  m_Name: Spawn (Scheduled)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &279196230
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 279196229}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 7.15, y: 5.11, z: -17.68}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &283493609
 GameObject:
   m_ObjectHideFlags: 0
@@ -5311,7 +5342,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -662, y: 456.96}
+  m_AnchoredPosition: {x: -663, y: 454}
   m_SizeDelta: {x: 777.0683, y: 189.9114}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &411848821
@@ -5771,11 +5802,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 444804468}
   m_Mesh: {fileID: -1426202006884783354, guid: 542febb9ff7852a43ac4bb8b52879cbc, type: 3}
---- !u!1 &454980957 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 232829807541433336, guid: 63416e98b61b48d4a9171a96c815d307, type: 3}
-  m_PrefabInstance: {fileID: 852673190}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &455663137
 GameObject:
   m_ObjectHideFlags: 0
@@ -8308,7 +8334,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 262dca1f9e3b8ff4bb21991674068ce7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DraggableIngredient
-  data: {fileID: 11400000, guid: e15b7e6a4b81e05428ea8c887a46ae8f, type: 2}
+  data: {fileID: 0}
   scrollSpeed: 2
   minDistance: 1
   maxDistance: 10
@@ -9007,7 +9033,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 262dca1f9e3b8ff4bb21991674068ce7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DraggableIngredient
-  data: {fileID: 11400000, guid: 6e58d5d38a86df448af35a82e203bf98, type: 2}
+  data: {fileID: 0}
   scrollSpeed: 3
   minDistance: 1
   maxDistance: 10
@@ -9429,7 +9455,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 262dca1f9e3b8ff4bb21991674068ce7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DraggableIngredient
-  data: {fileID: 11400000, guid: 923ae5e9ef300754baabe0a1fcf9f4ef, type: 2}
+  data: {fileID: 0}
   scrollSpeed: 2
   minDistance: 1
   maxDistance: 10
@@ -10371,8 +10397,8 @@ MonoBehaviour:
   lineText: {fileID: 1584860293}
   choiceButtonPrefab: {fileID: 7892076627761229432, guid: 467f74399946aeb438c278ea5609efb2, type: 3}
   choicesContainer: {fileID: 1481222897}
-  defaultTalkSpeed: 20
-  fastTalkSpeed: 40
+  defaultTalkSpeed: 500
+  fastTalkSpeed: 600
 --- !u!4 &846343434
 Transform:
   m_ObjectHideFlags: 0
@@ -10668,63 +10694,6 @@ Transform:
   - {fileID: 397975337}
   m_Father: {fileID: 1466859492}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &852673190
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 232829807541433336, guid: 63416e98b61b48d4a9171a96c815d307, type: 3}
-      propertyPath: m_Name
-      value: MECHANICNPCPREFAB
-      objectReference: {fileID: 0}
-    - target: {fileID: 2903276744728578244, guid: 63416e98b61b48d4a9171a96c815d307, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 16.91
-      objectReference: {fileID: 0}
-    - target: {fileID: 2903276744728578244, guid: 63416e98b61b48d4a9171a96c815d307, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.78
-      objectReference: {fileID: 0}
-    - target: {fileID: 2903276744728578244, guid: 63416e98b61b48d4a9171a96c815d307, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 2.05229
-      objectReference: {fileID: 0}
-    - target: {fileID: 2903276744728578244, guid: 63416e98b61b48d4a9171a96c815d307, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2903276744728578244, guid: 63416e98b61b48d4a9171a96c815d307, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2903276744728578244, guid: 63416e98b61b48d4a9171a96c815d307, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2903276744728578244, guid: 63416e98b61b48d4a9171a96c815d307, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2903276744728578244, guid: 63416e98b61b48d4a9171a96c815d307, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2903276744728578244, guid: 63416e98b61b48d4a9171a96c815d307, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2903276744728578244, guid: 63416e98b61b48d4a9171a96c815d307, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 63416e98b61b48d4a9171a96c815d307, type: 3}
 --- !u!1 &875755205
 GameObject:
   m_ObjectHideFlags: 0
@@ -14006,7 +13975,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 262dca1f9e3b8ff4bb21991674068ce7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DraggableIngredient
-  data: {fileID: 11400000, guid: 36d02666bb96e0243a60b6780a72db1f, type: 2}
+  data: {fileID: 0}
   scrollSpeed: 2
   minDistance: 1
   maxDistance: 10
@@ -16063,7 +16032,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 262dca1f9e3b8ff4bb21991674068ce7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DraggableIngredient
-  data: {fileID: 11400000, guid: 85310ccf6f2a24a44aaacb94f96ac69c, type: 2}
+  data: {fileID: 0}
   scrollSpeed: 2
   minDistance: 1
   maxDistance: 10
@@ -16922,16 +16891,16 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1451986652}
-  - component: {fileID: 1451986651}
   - component: {fileID: 1451986650}
   - component: {fileID: 1451986649}
   - component: {fileID: 1451986647}
   - component: {fileID: 1451986648}
   - component: {fileID: 1451986653}
   - component: {fileID: 1451986654}
+  - component: {fileID: 1451986655}
   m_Layer: 0
   m_Name: BIGOLGAMEMANAGER
-  m_TagString: Untagged
+  m_TagString: TimeManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17019,7 +16988,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c13ae9360eb0cca4d981a93aae1c2c42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ClockUI
-  timeSystem: {fileID: 1451986651}
+  timeSystem: {fileID: 1451986655}
   clockText: {fileID: 1542754683}
   use24HourFormat: 0
   canPlayColor: {r: 0, g: 1, b: 0, a: 1}
@@ -17036,7 +17005,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdf17ed46df04ff4c82d2f124401df61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TimeDebugUI
-  timeSystem: {fileID: 1451986651}
+  timeSystem: {fileID: 1451986655}
   statsSystem: {fileID: 1451986648}
   drinkSystem: {fileID: 1451986647}
   cup: {fileID: 1239194031}
@@ -17075,115 +17044,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 941397e436ad6a44281ac0cc97af010d, type: 2}
   - {fileID: 11400000, guid: 0929ffd69b9da3d43b7c27a01dcdaedd, type: 2}
   - {fileID: 11400000, guid: 0df14e4824db24945b3e65fce0329c2a, type: 2}
---- !u!114 &1451986651
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1451986646}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d5bd33b028d57c42bf30860f4c5bed7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::RealWorldTimeSystem
-  useDebugTime: 0
-  debugTime: 12
-  debugSpeed: 1
-  autoPlayTime: 0
-  latitude: 40.7
-  longitude: -74
-  sun: {fileID: 95763038}
-  sunOffset: -90
-  lightColor:
-    serializedVersion: 2
-    key0: {r: 0.023238765, g: 0.03020383, b: 0.15723258, a: 1}
-    key1: {r: 1, g: 0.5873575, b: 0.20440245, a: 1}
-    key2: {r: 1, g: 0.93118197, b: 0.6949685, a: 0}
-    key3: {r: 1, g: 0.5882353, b: 0.20784314, a: 0}
-    key4: {r: 0.023529412, g: 0.03137255, b: 0.15686275, a: 0}
-    key5: {r: 0, g: 0, b: 0, a: 0}
-    key6: {r: 0, g: 0, b: 0, a: 0}
-    key7: {r: 0, g: 0, b: 0, a: 0}
-    ctime0: 0
-    ctime1: 16384
-    ctime2: 32768
-    ctime3: 49151
-    ctime4: 65535
-    ctime5: 0
-    ctime6: 0
-    ctime7: 0
-    atime0: 0
-    atime1: 65535
-    atime2: 0
-    atime3: 0
-    atime4: 0
-    atime5: 0
-    atime6: 0
-    atime7: 0
-    m_Mode: 0
-    m_ColorSpace: -1
-    m_NumColorKeys: 5
-    m_NumAlphaKeys: 2
-  lightIntensity:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0.00793457
-      inSlope: 2.9328494
-      outSlope: 2.9328494
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.018999994
-    - serializedVersion: 3
-      time: 0.99405944
-      value: 0
-      inSlope: -5.13792
-      outSlope: -5.13792
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.022000426
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  ambientColor:
-    serializedVersion: 2
-    key0: {r: 0.026932616, g: 0, b: 0.16352195, a: 1}
-    key1: {r: 1, g: 0.87870157, b: 0.60691816, a: 1}
-    key2: {r: 0.02745098, g: 0, b: 0.16470589, a: 0}
-    key3: {r: 0, g: 0, b: 0, a: 0}
-    key4: {r: 0, g: 0, b: 0, a: 0}
-    key5: {r: 0, g: 0, b: 0, a: 0}
-    key6: {r: 0, g: 0, b: 0, a: 0}
-    key7: {r: 0, g: 0, b: 0, a: 0}
-    ctime0: 0
-    ctime1: 32768
-    ctime2: 65535
-    ctime3: 0
-    ctime4: 0
-    ctime5: 0
-    ctime6: 0
-    ctime7: 0
-    atime0: 0
-    atime1: 65535
-    atime2: 0
-    atime3: 0
-    atime4: 0
-    atime5: 0
-    atime6: 0
-    atime7: 0
-    m_Mode: 0
-    m_ColorSpace: -1
-    m_NumColorKeys: 3
-    m_NumAlphaKeys: 2
-  skyboxBlendMat: {fileID: 2100000, guid: 9e44097504966ca4d913c29ac7766304, type: 2}
-  nightHDRI: {fileID: 8900000, guid: 97259d0c0ea9f491692be825da27978a, type: 3}
-  sunriseHDRI: {fileID: 8900000, guid: 66e51860485ae4048a30f7e029e65af7, type: 3}
-  dayHDRI: {fileID: 8900000, guid: d4c8dc343ae5d4673b7720ffdb1ddf00, type: 3}
-  sunsetHDRI: {fileID: 8900000, guid: 8a293ce833d584fc98516e0e74f495a4, type: 3}
 --- !u!4 &1451986652
 Transform:
   m_ObjectHideFlags: 0
@@ -17212,13 +17072,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScheduledCustomerSystem
   drinkSystem: {fileID: 1451986647}
-  timeSystem: {fileID: 1451986651}
-  spawnPoint: {fileID: 155924748}
+  timeSystem: {fileID: 1451986655}
+  spawnPoint: {fileID: 279196230}
   scheduledCustomers:
-  - characterName: Mechanic
-    spawnTime: 17.81
-    npcPrefab: {fileID: 454980957}
-    drinkOrder: Margarita
+  - characterName: Saifa
+    spawnTime: 18
+    npcPrefab: {fileID: 2815003596099819244, guid: 00e58b276242ead43b10813efc65a4a1, type: 3}
+    drinkOrder: Death in the Afternoon
+    hasSpawnedToday: 0
+  - characterName: Thanh
+    spawnTime: 23
+    npcPrefab: {fileID: 2815003596099819244, guid: 715d1f952b912ec449d1ceb81c328040, type: 3}
+    drinkOrder: Bud Light
+    hasSpawnedToday: 0
+  - characterName: Drop
+    spawnTime: 0
+    npcPrefab: {fileID: 2815003596099819244, guid: c7143397951256743af2a58549e7e80f, type: 3}
+    drinkOrder: Vodka w/ extra oil
     hasSpawnedToday: 0
 --- !u!114 &1451986654
 MonoBehaviour:
@@ -17253,6 +17123,97 @@ MonoBehaviour:
   - {fileID: 1977425555}
   - {fileID: 1246659991}
   respawnDelay: 3
+--- !u!114 &1451986655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1451986646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0f30189e0cf892488760ae640ff4dcf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RealWorldTimeSystem
+  useDebugTime: 0
+  debugTime: 12
+  debugSpeed: 1
+  autoPlayTime: 0
+  latitude: 40.7
+  longitude: -74
+  sun: {fileID: 95763038}
+  sunOffset: -90
+  lightColor:
+    serializedVersion: 2
+    key0: {r: 1, g: 1, b: 1, a: 1}
+    key1: {r: 1, g: 1, b: 1, a: 1}
+    key2: {r: 0, g: 0, b: 0, a: 0}
+    key3: {r: 0, g: 0, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 65535
+    ctime2: 0
+    ctime3: 0
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_ColorSpace: -1
+    m_NumColorKeys: 2
+    m_NumAlphaKeys: 2
+  lightIntensity:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  ambientColor:
+    serializedVersion: 2
+    key0: {r: 1, g: 1, b: 1, a: 1}
+    key1: {r: 1, g: 1, b: 1, a: 1}
+    key2: {r: 0, g: 0, b: 0, a: 0}
+    key3: {r: 0, g: 0, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 65535
+    ctime2: 0
+    ctime3: 0
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_ColorSpace: -1
+    m_NumColorKeys: 2
+    m_NumAlphaKeys: 2
+  skyboxBlendMat: {fileID: 2100000, guid: 9e44097504966ca4d913c29ac7766304, type: 2}
+  nightHDRI: {fileID: 8900000, guid: 34a763168147f4182a21b9fd004d67de, type: 3}
+  sunriseHDRI: {fileID: 8900000, guid: 6fa3f446deee84c52aec507bd0aca28c, type: 3}
+  dayHDRI: {fileID: 8900000, guid: d4c8dc343ae5d4673b7720ffdb1ddf00, type: 3}
+  sunsetHDRI: {fileID: 8900000, guid: 6fa3f446deee84c52aec507bd0aca28c, type: 3}
 --- !u!1 &1456543354
 GameObject:
   m_ObjectHideFlags: 0
@@ -18271,7 +18232,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 758, y: 488.47}
+  m_AnchoredPosition: {x: 760, y: 477}
   m_SizeDelta: {x: 474.1872, y: 103.0685}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1542754683
@@ -18328,7 +18289,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 4
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -23492,7 +23453,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 262dca1f9e3b8ff4bb21991674068ce7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DraggableIngredient
-  data: {fileID: 11400000, guid: 186d19d7c6ec8424bbde0589d8e0f38d, type: 2}
+  data: {fileID: 0}
   scrollSpeed: 2
   minDistance: 1
   maxDistance: 10
@@ -23897,7 +23858,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 262dca1f9e3b8ff4bb21991674068ce7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DraggableIngredient
-  data: {fileID: 11400000, guid: 6af7348f14ed945449c5f6efcaf7181d, type: 2}
+  data: {fileID: 0}
   scrollSpeed: 3
   minDistance: 1
   maxDistance: 10
@@ -25559,85 +25520,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7d598df93c2852a41999f16f8bbba61b, type: 3}
---- !u!1001 &2069424105
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2783144807082571197, guid: 08765dcdaee353142912ed84d23443e8, type: 3}
-      propertyPath: m_Name
-      value: Saifa
-      objectReference: {fileID: 0}
-    - target: {fileID: 8877009110700848508, guid: 08765dcdaee353142912ed84d23443e8, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 7.76
-      objectReference: {fileID: 0}
-    - target: {fileID: 8877009110700848508, guid: 08765dcdaee353142912ed84d23443e8, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2.57
-      objectReference: {fileID: 0}
-    - target: {fileID: 8877009110700848508, guid: 08765dcdaee353142912ed84d23443e8, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -18
-      objectReference: {fileID: 0}
-    - target: {fileID: 8877009110700848508, guid: 08765dcdaee353142912ed84d23443e8, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8877009110700848508, guid: 08765dcdaee353142912ed84d23443e8, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8877009110700848508, guid: 08765dcdaee353142912ed84d23443e8, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8877009110700848508, guid: 08765dcdaee353142912ed84d23443e8, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8877009110700848508, guid: 08765dcdaee353142912ed84d23443e8, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8877009110700848508, guid: 08765dcdaee353142912ed84d23443e8, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8877009110700848508, guid: 08765dcdaee353142912ed84d23443e8, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 372597939600659547, guid: 08765dcdaee353142912ed84d23443e8, type: 3}
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2783144807082571197, guid: 08765dcdaee353142912ed84d23443e8, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2069424107}
-  m_SourcePrefab: {fileID: 100100000, guid: 08765dcdaee353142912ed84d23443e8, type: 3}
---- !u!1 &2069424106 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2783144807082571197, guid: 08765dcdaee353142912ed84d23443e8, type: 3}
-  m_PrefabInstance: {fileID: 2069424105}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2069424107
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2069424106}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d942601296a8b7e4d94d4299e1e96301, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ClickDetector
-  NPCData: {fileID: 11400000, guid: 03bfb92f1e486184e91094aef42fe401, type: 2}
 --- !u!1 &2079381148
 GameObject:
   m_ObjectHideFlags: 0
@@ -25777,7 +25659,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -794, y: 415.53}
+  m_AnchoredPosition: {x: 800, y: 405}
   m_SizeDelta: {x: 285.2349, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2080305554
@@ -25834,7 +25716,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 4
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -26640,10 +26522,10 @@ SceneRoots:
   - {fileID: 1458205561}
   - {fileID: 1933504411}
   - {fileID: 155924748}
+  - {fileID: 279196230}
   - {fileID: 95763039}
   - {fileID: 1579942092}
   - {fileID: 1255171866}
-  - {fileID: 852673190}
   - {fileID: 1971834248}
   - {fileID: 470523123}
   - {fileID: 1470323954}
@@ -26696,4 +26578,3 @@ SceneRoots:
   - {fileID: 1525334624}
   - {fileID: 2079381149}
   - {fileID: 846343434}
-  - {fileID: 2069424105}

@@ -17,6 +17,12 @@ public class NPCData : ScriptableObject
     [Header("if no choices, auto continue to this next node")]
     public NPCData nextNode;
 
+    [Header("Node viewed?")]
+    public bool nodeViewed;
+
+    [Header("Needs drink to be made first?")]
+    public bool requiresDrink;
+
 }
 
 [System.Serializable]

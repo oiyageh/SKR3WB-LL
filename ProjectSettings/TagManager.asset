@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ingredient
   - DialogueManager
+  - TimeManager
   layers:
   - Default
   - TransparentFX

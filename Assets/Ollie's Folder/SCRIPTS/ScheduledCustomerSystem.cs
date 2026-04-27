@@ -57,8 +57,8 @@ public class ScheduledCustomerSystem : MonoBehaviour
 
     float GetCurrentTime()
     {
-        if (timeSystem != null && timeSystem.useDebugTime)
-            return timeSystem.debugTime;
+        //if (timeSystem != null && timeSystem.useDebugTime)
+        //    return timeSystem.debugTime;
 
         DateTime now = DateTime.Now;
         return now.Hour + now.Minute / 60f;

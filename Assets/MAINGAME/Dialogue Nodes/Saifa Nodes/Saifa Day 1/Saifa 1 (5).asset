@@ -10,15 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f35bef4643c49dc4ea6d6828aac4e8d4, type: 3}
-  m_Name: Saifa 1
+  m_Name: Saifa 1 (5)
   m_EditorClassIdentifier: Assembly-CSharp::NPCData
   displayName: Saifa
   lines:
-  - ... (she seems to want to say something, but something is holding her back.)
+  - That... sounds pretty nice...
+  - (She shows her ID.)
+  - Hm...I think...uhm...
+  - I'll do a Death in the Afternoon...?
   allChoices:
-  - choiceText: Hello, how are you? Are you looking to order? Is this your first
-      time here?
-    nextNode: {fileID: 11400000, guid: 405579e31b039354b867225822d6a295, type: 2}
-  - choiceText: Are you just going to sit there looking dumb?
-    nextNode: {fileID: 11400000, guid: 95f3258bf66902d478e23419ca036588, type: 2}
+  - choiceText: 'Interesting choice! I''ll get started on that for ya. '
+    nextNode: {fileID: 0}
+  - choiceText: Yeah, sure... I'll get that for you.
+    nextNode: {fileID: 0}
   nextNode: {fileID: 0}
+  makeDrink: 0

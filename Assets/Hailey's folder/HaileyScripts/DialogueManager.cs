@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Runtime.InteropServices.WindowsRuntime;
 using System.Xml.Linq;
 using TMPro;
 using UnityEngine;
@@ -61,7 +62,8 @@ public class DialogueManager : MonoBehaviour
             Debug.Log("NPC Data is Null");
             return;
         }
-        OnDialogueStart?.Invoke(npcData); ;
+
+        OnDialogueStart?.Invoke(npcData); 
 
 
         //set state
@@ -70,7 +72,18 @@ public class DialogueManager : MonoBehaviour
         isActive = true;
 
         if (dialoguePanel != null) dialoguePanel.SetActive(true);
-        ShowLine();
+
+        //checks if the node requires the drink to be made
+        if (npcData.requiresDrink)
+        {
+            //checks the game manager and sees if the current npc has their drink
+            if (GameObject.FindGameObjectWithTag("Time Manager").GetComponent<DrinkOrderSystem>().scheduledCustomerHasDrink)
+            {
+                ShowLine();
+            }
+            else return;
+        }
+        else ShowLine();
     }
 
     bool HasChoices(NPCData node)//Check the data
@@ -155,7 +168,7 @@ public class DialogueManager : MonoBehaviour
     {
         isActive = false;
         OnDialogueEnd?.Invoke(currentNode);
-
+        currentNode.nodeViewed = true;
         currentNode = null;
         lineIndex = 0;
         ClearChoices();
@@ -238,7 +251,7 @@ public class DialogueManager : MonoBehaviour
     private string currentText;
 
 
-    //This section is about iterating over every letter of the current line and modifying the result.
+    //Iterates every line 
     //This section also directly sends text to the textMeshPro.
     IEnumerator ProcessText(string fullString)
     {
@@ -253,16 +266,11 @@ public class DialogueManager : MonoBehaviour
 
                 lineText.text = currentText.Substring(0, Mathf.Clamp(i, 0, currentText.Length));
 
-                yield return new WaitForSeconds(1f / talkSpeed);
+                yield return new WaitForSeconds(1f/talkSpeed);
 
             }
             Speaking = false;
         }
 
     }
-    //Checks the current word to see if it contains any of the commands I created and replaces them with the
-    //html commands unity understands
-    //It also returns the number of letters that should be skipped when iterating over the text,
-    //To make the commands not appear as they're being typed out.
-
 }
