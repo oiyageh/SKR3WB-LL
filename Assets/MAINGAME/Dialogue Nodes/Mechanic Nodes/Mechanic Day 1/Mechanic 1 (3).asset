@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f35bef4643c49dc4ea6d6828aac4e8d4, type: 3}
+  m_Name: Mechanic 1 (3)
+  m_EditorClassIdentifier: Assembly-CSharp::NPCData
+  displayName: Thanh
+  lines:
+  - (He turns down to look at his beer, his eyes fixated on the drink for a moment
+    before he takes a reluctant sip.)
+  - Just... have been having a rough day. Or week, I guess.
+  allChoices:
+  - choiceText: You wanna talk about it?
+    nextNode: {fileID: 11400000, guid: e7f3b1ff2495baf4597dd07fe0eca09a, type: 2}
+  - choiceText: I'm not just here to serve drinks, you know.
+    nextNode: {fileID: 11400000, guid: 586271e1476352946bd35ab50ed4b581, type: 2}
+  nextNode: {fileID: 0}
+  nodeViewed: 0

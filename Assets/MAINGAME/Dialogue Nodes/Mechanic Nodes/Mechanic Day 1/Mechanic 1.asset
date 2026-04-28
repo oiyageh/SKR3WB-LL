@@ -10,10 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f35bef4643c49dc4ea6d6828aac4e8d4, type: 3}
-  m_Name: Saifa 7
+  m_Name: Mechanic 1
   m_EditorClassIdentifier: Assembly-CSharp::NPCData
-  displayName: 
-  lines: []
-  allChoices: []
+  displayName: Thanh
+  lines:
+  - 'The motor oil-scented middle-aged man has ordered a Bud Light but it remains
+    untouched, his tears dampening his beard and dripping down onto the bar counter.  '
+  - He looks kinda pathetic.
+  allChoices:
+  - choiceText: Everything alright, sir?
+    nextNode: {fileID: 11400000, guid: 2948bc61aa229dd459aaeb53362f16d6, type: 2}
   nextNode: {fileID: 0}
   nodeViewed: 0

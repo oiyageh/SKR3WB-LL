@@ -10,15 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f35bef4643c49dc4ea6d6828aac4e8d4, type: 3}
-  m_Name: Saifa 2
+  m_Name: Mechanic 1 (5)
   m_EditorClassIdentifier: Assembly-CSharp::NPCData
-  displayName: Saifa
+  displayName: 
   lines:
-  - Hello again...
+  - (The man chuckles weakly, nodding in agreement.)
+  - I guess that's true. Assuming you're human, of course.
+  - Well, my...
+  - (He scratches the back of his head. His hair is a greasy jet black.)
+  - ...my wife passed just last week.
   allChoices:
-  - choiceText: Hey! Welcome back!
-    nextNode: {fileID: 11400000, guid: 7a76a89c5b723cd48ac860fc19d02288, type: 2}
-  - choiceText: Oh, you're here...
-    nextNode: {fileID: 11400000, guid: 208b70867509ef84e88cecd777dc4fa9, type: 2}
+  - choiceText: I'm sorry about that.
+    nextNode: {fileID: 0}
   nextNode: {fileID: 0}
   nodeViewed: 0

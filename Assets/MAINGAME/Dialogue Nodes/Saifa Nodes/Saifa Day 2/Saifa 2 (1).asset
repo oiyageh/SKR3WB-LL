@@ -10,10 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f35bef4643c49dc4ea6d6828aac4e8d4, type: 3}
-  m_Name: Saifa 6
+  m_Name: Saifa 2 (1)
   m_EditorClassIdentifier: Assembly-CSharp::NPCData
-  displayName: 
-  lines: []
+  displayName: Saifa
+  lines:
+  - Thank you, this place is rather calming...
+  - ...could I... get what I got last time?
   allChoices: []
   nextNode: {fileID: 0}
   nodeViewed: 0
