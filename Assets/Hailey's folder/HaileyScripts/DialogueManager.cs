@@ -74,16 +74,17 @@ public class DialogueManager : MonoBehaviour
         if (dialoguePanel != null) dialoguePanel.SetActive(true);
 
         //checks if the node requires the drink to be made
-        if (npcData.requiresDrink)
-        {
-            //checks the game manager and sees if the current npc has their drink
-            if (GameObject.FindGameObjectWithTag("Time Manager").GetComponent<DrinkOrderSystem>().scheduledCustomerHasDrink)
-            {
-                ShowLine();
-            }
-            else return;
-        }
-        else ShowLine();
+        //if (npcData.requiresDrink)
+        //{
+        //    //checks the game manager and sees if the current npc has their drink
+        //    if (GameObject.FindGameObjectWithTag("Time Manager").GetComponent<DrinkOrderSystem>().scheduledCustomerHasDrink)
+        //    {
+        //        ShowLine();
+        //    }
+        //    else return;
+        //}
+        //else
+        ShowLine();
     }
 
     bool HasChoices(NPCData node)//Check the data

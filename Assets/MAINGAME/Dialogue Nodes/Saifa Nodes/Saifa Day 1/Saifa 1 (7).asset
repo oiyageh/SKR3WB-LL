@@ -10,13 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f35bef4643c49dc4ea6d6828aac4e8d4, type: 3}
-  m_Name: Saifa 1 (6)
+  m_Name: Saifa 1 (7)
   m_EditorClassIdentifier: Assembly-CSharp::NPCData
-  displayName: Saifa
-  lines: []
+  displayName: 
+  lines:
+  - No...not really...
+  - I live in one of the larger skyscrapers...
+  - ...with my... uhm...boss.
   allChoices:
-  - choiceText: Are you new in town? I haven't seen you before.
-    nextNode: {fileID: 11400000, guid: 49e3a0c32ec1f434e9bd34cc56d4d7d8, type: 2}
+  - choiceText: Uh huh. Sure he is... who's your boss?
+    nextNode: {fileID: 0}
+  - choiceText: Boss? If you don't mind my asking, who is your boss?
+    nextNode: {fileID: 0}
   nextNode: {fileID: 0}
   nodeViewed: 0
-  requiresDrink: 1
+  requiresDrink: 0

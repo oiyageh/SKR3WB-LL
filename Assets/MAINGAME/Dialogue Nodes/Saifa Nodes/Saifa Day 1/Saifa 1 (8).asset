@@ -10,13 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f35bef4643c49dc4ea6d6828aac4e8d4, type: 3}
-  m_Name: Saifa 1 (6)
+  m_Name: Saifa 1 (8)
   m_EditorClassIdentifier: Assembly-CSharp::NPCData
-  displayName: Saifa
-  lines: []
-  allChoices:
-  - choiceText: Are you new in town? I haven't seen you before.
-    nextNode: {fileID: 11400000, guid: 49e3a0c32ec1f434e9bd34cc56d4d7d8, type: 2}
+  displayName: 
+  lines:
+  - I am... not permitted to say that.
+  - He is a rather influential man...
+  - ...and I just needed a bit of space from him...
+  - Anyway, uhm... thank you for the drink...
+  allChoices: []
   nextNode: {fileID: 0}
   nodeViewed: 0
-  requiresDrink: 1
+  requiresDrink: 0

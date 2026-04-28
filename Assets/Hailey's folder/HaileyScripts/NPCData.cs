@@ -20,8 +20,8 @@ public class NPCData : ScriptableObject
     [Header("Node viewed?")]
     public bool nodeViewed;
 
-    [Header("Needs drink to be made first?")]
-    public bool requiresDrink;
+    //[Header("Needs drink to be made first?")]
+    //public bool requiresDrink;
 
 }
 
